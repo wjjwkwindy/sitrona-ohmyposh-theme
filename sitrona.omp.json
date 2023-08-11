@@ -1,0 +1,81 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+	{
+      "type": "rprompt",
+      "segments": [
+	  {
+          "foreground": "#D2D2D2",
+          "properties": {
+            "time_format": "15"
+          },
+          "style": "plain",
+          "template": "{{if eq (.CurrentDate | date .Format) \"06\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"07\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"08\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"09\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"10\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"11\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"12\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"13\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"14\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"15\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"16\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"17\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"18\"}} \uf522 {{else if eq (.CurrentDate | date .Format) \"19\"}} \uf522 {{else}} \uf186 {{end}}",
+          "type": "time"
+        },
+        {
+          "foreground": "#D2D2D2",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "plain",
+          "template": "{{ .CurrentDate | date .Format }}",
+          "type": "time"
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#45f1c2",
+          "style": "plain",
+          "template": "Sítróna",
+          "type": "session"
+        },
+        {
+          "foreground": "#0CA0D8",
+          "properties": {
+            "folder_separator_icon": "/",
+            "style": "full"
+          },
+          "style": "plain",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#14A5AE",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#cd5e42",
+          "style": "plain",
+          "template": "\ue3bf ",
+          "type": "root"
+        },
+        {
+          "foreground": "#ffc83d",
+          "style": "plain",
+          "template": "⚡ ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
